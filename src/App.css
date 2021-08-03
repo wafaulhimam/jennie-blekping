@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.judul {
+  color: green;
+}
+
+.button-counter {
+  background-color: yellow;
+  margin: 0px 20px;
+}

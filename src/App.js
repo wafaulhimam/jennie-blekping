@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AboutMe from './pages/AboutMe';
+import Counter from './pages/Counter';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
+import Hooks from './pages/Hooks';
+import Contributor from './pages/Contributor';
+import Buku from './pages/Buku';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Switch>
+
+        <Route exact path="/">
+          <Home />
+        </Route>
+        
+        <Route path="/about-me">
+          <AboutMe />
+        </Route>
+
+        <Route path="/counter">
+          <Counter />
+        </Route>
+
+        <Route path="/hooks">
+          <Hooks />
+        </Route>
+
+        <Route path="/contributor">
+          <Contributor />
+        </Route>
+
+        <Route path="/buku">
+          <Buku />
+        </Route>
+
+      </Switch>
+    </BrowserRouter>
   );
 }
 
